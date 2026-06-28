@@ -4,38 +4,37 @@ import br.com.alura.screenmatch.modelos.Serie;
 
 public class Principal {
     public static void main(String[] args) {
-        Filme meuFilme = new Filme();
-        meuFilme.setNome("O poderoso chefão");
-        meuFilme.setAnoDeLancamento(1970);
-        meuFilme.setDuracaoEmMinutos(180);
-        System.out.println("Duração do filme: " + meuFilme.getDuracaoEmMinutos());
+        Filme filme = new Filme();
 
-        meuFilme.exibeFichaTecnica();
-        meuFilme.avalia(8);
-        meuFilme.avalia(5);
-        meuFilme.avalia(10);
-        System.out.println("Total de avaliações: " + meuFilme.getTotalDeAvaliacoes());
-        System.out.println(meuFilme.pegaMedia());
-        //meuFilme.somaDasAvaliacoes = 10;
-        //meuFilme.totalDeAvaliacoes = 1;
-        //System.out.println(meuFilme.pegaMedia());
+        filme.setNome("O poderoso chefão");
+        filme.setAnoDeLancamento(1970);
+        filme.setDuracaoEmMinutos(180);
+        System.out.println("Duração do filme: " + filme.getDuracaoEmMinutos());
+
+        filme.exibeFichaTecnica();
+        filme.avalia(9);
+        filme.avalia(3);
+        filme.avalia(10);
+        System.out.println("Total de avaliações: " + filme.getTotalDeAvaliacoes());
+        System.out.println(filme.pegaMedia());
 
         Serie serie = new Serie();
-        serie.setNome("Lost");
+
+        serie.setNome("Supernatural");
         serie.setAnoDeLancamento(2000);
-        serie.exibeFichaTecnica();
-        serie.setTemporadas(10);
-        serie.setEpisodiosPorTemporada(10);
+        serie.setTemporadas(14);
+        serie.setEpisodiosPorTemporada(24);
         serie.setMinutosPorEpisodio(50);
-        System.out.println("Duração para maratonar Lost: " + serie.getDuracaoEmMinutos());
+        serie.exibeFichaTecnica();
+        System.out.println("Duração para maratonar Supernatural: " + serie.getDuracaoEmMinutos());
 
         Filme outroFilme = new Filme();
-        outroFilme.setNome("Avatar");
-        outroFilme.setAnoDeLancamento(2023);
+        outroFilme.setNome("Jump");
+        outroFilme.setAnoDeLancamento(2015);
         outroFilme.setDuracaoEmMinutos(200);
 
         CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
-        calculadora.inclui(meuFilme);
+        calculadora.inclui(filme);
         calculadora.inclui(outroFilme);
         calculadora.inclui(serie);
         System.out.println(calculadora.getTempoTotal());
